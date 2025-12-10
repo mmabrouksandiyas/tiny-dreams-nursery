@@ -1,10 +1,12 @@
+// vite.config.ts
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 import tailwindcss from "@tailwindcss/vite";
 import path from "node:path";
 
 export default defineConfig({
-  base: "/tiny-dream-nursery/", // ✅ for GitHub Pages
+  // 👇 MUST match your GitHub repo name exactly
+  base: "/tiny-dreams-nursery/",
 
   root: path.resolve(import.meta.dirname, "client"),
 
@@ -18,17 +20,17 @@ export default defineConfig({
         "client",
         "src",
         "attached-assets"
-      )
-    }
+      ),
+    },
   },
 
   build: {
     outDir: path.resolve(import.meta.dirname, "dist"),
-    emptyOutDir: true
+    emptyOutDir: true,
   },
 
   server: {
     port: 5173,
-    host: "localhost"
-  }
+    host: "localhost",
+  },
 });
