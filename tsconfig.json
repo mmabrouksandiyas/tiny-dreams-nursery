@@ -1,0 +1,34 @@
+{
+  "compilerOptions": {
+    "incremental": true,
+    "tsBuildInfoFile": "./node_modules/typescript/tsbuildinfo",
+    "noEmit": true,
+
+    "target": "ESNext",
+    "module": "ESNext",
+    "moduleResolution": "bundler",
+
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "allowImportingTsExtensions": true,
+
+    "lib": ["ESNext", "DOM", "DOM.Iterable"],
+    "jsx": "react-jsx",
+
+    "baseUrl": ".",
+    "types": ["node", "vite/client"],
+
+    "paths": {
+      "@/*": ["client/src/*"],              // ✅ correct alias root
+      "@assets/*": ["client/src/attached-assets/*"] // optional: aligns with your folder
+    },
+
+    "ignoreDeprecations": "6.0"
+  },
+
+  // ✅ Tell TypeScript where your source code lives
+  "include": ["client/src"],
+
+  "exclude": ["node_modules", "build", "dist", "**/*.test.ts"]
+}

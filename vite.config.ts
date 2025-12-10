@@ -1,0 +1,34 @@
+import { defineConfig } from "vite";
+import react from "@vitejs/plugin-react";
+import tailwindcss from "@tailwindcss/vite";
+import path from "node:path";
+
+export default defineConfig({
+  base: "/tiny-dreams-nursery/", // ✅ for GitHub Pages
+
+  root: path.resolve(import.meta.dirname, "client"),
+
+  plugins: [react(), tailwindcss()],
+
+  resolve: {
+    alias: {
+      "@": path.resolve(import.meta.dirname, "client", "src"),
+      "@assets": path.resolve(
+        import.meta.dirname,
+        "client",
+        "src",
+        "attached-assets"
+      )
+    }
+  },
+
+  build: {
+    outDir: path.resolve(import.meta.dirname, "dist"),
+    emptyOutDir: true
+  },
+
+  server: {
+    port: 5173,
+    host: "localhost"
+  }
+});
