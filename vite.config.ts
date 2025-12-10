@@ -4,7 +4,7 @@ import tailwindcss from "@tailwindcss/vite";
 import path from "node:path";
 
 export default defineConfig({
-  base: "/tiny-dreams-nursery/", // ✅ for GitHub Pages
+  base: "/tiny-dream-nursery/", // ✅ for GitHub Pages
 
   root: path.resolve(import.meta.dirname, "client"),
 
